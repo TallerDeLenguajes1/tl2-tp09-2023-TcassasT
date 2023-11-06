@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Repositorios.UsuarioRepository;
 
 [ApiController]
-[Route("controller")]
+[Route("api")]
 public class UsuarioController: ControllerBase {
   private IUsuarioRepository usuarioRepository = new UsuarioRepository();
   private readonly ILogger<UsuarioController> _logger;
@@ -12,13 +12,13 @@ public class UsuarioController: ControllerBase {
       _logger = logger;
   }
 
-  [HttpGet("api/usuario")]
+  [HttpGet("usuario")]
   public IEnumerable<Usuario> GetUsuarios() {
     List<Usuario> usuarios = usuarioRepository.GetUsuarios();
     return usuarios;
   }
 
-  [HttpGet("api/usuario/{id}")]
+  [HttpGet("usuario/{id}")]
   public IActionResult GetUsuario(int id) {
     Usuario usuario = usuarioRepository.GetUsuario(id);
     if (usuario != null) {
@@ -26,5 +26,11 @@ public class UsuarioController: ControllerBase {
     } else {
       return NotFound("Usuario no encontrado");
     }
+  }
+
+  [HttpPost("usuario")]
+  public IActionResult PostUsuario(Usuario usuario) {
+    usuarioRepository.CrearUsuario(usuario);
+    return Ok("Usuario creado");
   }
 }

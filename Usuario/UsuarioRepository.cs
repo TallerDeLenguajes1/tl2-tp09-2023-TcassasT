@@ -20,7 +20,7 @@ public class UsuarioRepository: IUsuarioRepository {
 
   public void CrearUsuario(Usuario usuario) {
     String query = String.Format(
-      "INSERT INTO usuarios VALUES ({0});",
+      "INSERT INTO usuarios (nombreDeUsuario) VALUES ('{0}');",
       usuario.NombreDeuUsario
     );
     EjecutaNonQueryUsuarios(query);
@@ -28,7 +28,7 @@ public class UsuarioRepository: IUsuarioRepository {
 
   public void ModificarUsuario(int id, Usuario usuario) {
     String query = String.Format(
-      "UPDATE usuarios SET nombreDeUsuario = {0} WHERE id = {1};",
+      "UPDATE usuarios SET nombreDeUsuario = '{0}' WHERE id = {1};",
       usuario.NombreDeuUsario,
       id
     );
