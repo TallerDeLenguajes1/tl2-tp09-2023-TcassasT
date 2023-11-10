@@ -10,5 +10,4 @@ public class Tablero {
   public int IdUsuarioPropietario { get => idUsuarioPropietario; set => idUsuarioPropietario = value; }
   public String? Nombre { get => nombre; set => nombre = value; }
   public String? Descripcion { get => descripcion; set => descripcion = value; }
-  
 }
