@@ -29,7 +29,7 @@ public class UsuarioController: ControllerBase {
   }
 
   [HttpPost("usuario")]
-  public IActionResult PostUsuario(Usuario usuario) {
+  public IActionResult CrearUsuario(Usuario usuario) {
     usuarioRepository.CrearUsuario(usuario);
     return Ok("Usuario creado");
   }
