@@ -33,4 +33,30 @@ public class UsuarioController: ControllerBase {
     usuarioRepository.CrearUsuario(usuario);
     return Ok("Usuario creado");
   }
+
+  [HttpPut("usuario/{id}/nombre")]
+  public IActionResult ModificarNombreUsuario(int id, Usuario usuario) {
+    Usuario usuarioAModificar = usuarioRepository.GetUsuario(id);
+
+    if (usuarioAModificar == null) {
+      return NotFound("Usuario no encontrado");
+    }
+
+    usuarioRepository.ModificarUsuario(id, usuario);
+
+    return Ok("Usuario modificado");
+  }
+
+  [HttpDelete("usuario/{id}")]
+  public IActionResult EliminarUsuario(int id) {
+    Usuario usuarioAEliminar = usuarioRepository.GetUsuario(id);
+
+    if (usuarioAEliminar == null) {
+      return NotFound("Usuario no encontrado");
+    }
+
+    usuarioRepository.EliminarUsuario(id);
+
+    return Ok("Usuario eliminado");
+  }
 }

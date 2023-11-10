@@ -5,5 +5,5 @@ public class Usuario {
   private String? nombreDeUsuario;
 
   public int Id { get => id; set => id = value; }
-  public String? NombreDeuUsario { get => nombreDeUsuario; set => nombreDeUsuario = value; }
+  public String? NombreDeUsario { get => nombreDeUsuario; set => nombreDeUsuario = value; }
 }
