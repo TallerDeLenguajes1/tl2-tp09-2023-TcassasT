@@ -1,0 +1,14 @@
+using EspacioTarea;
+
+namespace Interfaces.ITareaRepository;
+
+public interface ITareaRepository {
+  void CrearTareaEnTablero(Tarea tarea);
+  void ModificarTarea(int idTarea, Tarea tarea);
+  Tarea GetTarea(int idTarea);
+  List<Tarea> GetTareasByUsuarioId(int idUsuario);
+  List<Tarea> GetTareasByTableroId(int idTablero);
+  List<Tarea> GetTareasByEstado(int estado);
+  void EliminarTarea(int idTarea);
+  void AsignarTareaAUsuario(int idUsuario, int idTarea);
+}

@@ -1,3 +1,5 @@
+namespace Controllers;
+
 using EspacioUsuario;
 using Interfaces.IUsuarioRepository;
 using Microsoft.AspNetCore.Mvc;

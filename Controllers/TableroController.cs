@@ -1,3 +1,5 @@
+namespace Controllers;
+
 using EspacioTablero;
 using Interfaces.ITableroReposiroty;
 using Microsoft.AspNetCore.Mvc;
