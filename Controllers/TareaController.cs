@@ -75,7 +75,7 @@ public class TareaController: ControllerBase {
     return tareaRepository.GetTareasByUsuarioId(usuarioId);
   }
 
-  [HttpGet("tarea/usuario/{id}")]
+  [HttpGet("tarea/tablero/{id}")]
   public IEnumerable<Tarea> GetTareasByTableroId(int tableroId) {
     return tareaRepository.GetTareasByTableroId(tableroId);
   }

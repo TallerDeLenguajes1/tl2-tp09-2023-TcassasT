@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Interfaces.ITareaRepository;
 using Microsoft.Data.Sqlite;
 
@@ -10,7 +11,7 @@ public class TareaRepository: ITareaRepository {
       tarea.Nombre,
       tarea.Descripcion,
       tarea.Color,
-      tarea.Estado,
+      (int) tarea.Estado,
       tarea.IdUsuarioAsignado,
       tarea.IdTablero
     );
@@ -22,7 +23,7 @@ public class TareaRepository: ITareaRepository {
       "UPDATE tareas SET nombre = '{0}' descripcion = '{1}' color = '{2}' estado = {3} idUsuarioAsignado = {4} WHERE id = {5};",
       tarea.Nombre,
       tarea.Descripcion,
-      tarea.Estado,
+      (int) tarea.Estado,
       tarea.IdUsuarioAsignado,
       idTarea
     );
