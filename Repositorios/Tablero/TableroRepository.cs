@@ -36,7 +36,7 @@ public class TableroRepository: ITableroReposiroty {
 
   public void ModificarTablero(int id, Tablero tablero) {
     String query = String.Format(
-      "UPDATE tableros SET idUsuarioPropietarioi = {0} AND nombre = '{1}' AND descripcion = '{2}' WHERE id = {3};",
+      "UPDATE tableros SET idUsuarioPropietario = {0} AND nombre = '{1}' AND descripcion = '{2}' WHERE id = {3};",
       tablero.IdUsuarioPropietario,
       tablero.Nombre,
       tablero.Descripcion,
